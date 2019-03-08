@@ -1,0 +1,62 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 订单详情
+    </navigator>
+  </bar>
+</custom>
+<view class='nav-list text-df'>
+  <view class='success-text'>
+    <text class='iconfont icon-time text-xl mr-xs'></text>等待付款</view>
+  <view class='timer text-sm'>剩余：{{clock}}</view>
+</view>
+<view class='nav-list text-lg'>
+  <view class='iconfont icon-location text-xxl address-icon'></view>
+  <view class='text-lg address'>
+    <view>黄建杰 15928474996</view>
+    <view class='text-df gray-text'>四川省成都市富临沙河新城</view>
+  </view>
+</view>
+<view class='nav-list text-df order-num'>
+  <view class='grays-text'>
+    <text class='iconfont icon-text text-xl mr-xs'></text>订单号：564456455564545
+  </view>
+  <button class='success btn block hollow round'>
+    <text class='iconfont icon-service text-xl mr-xs'></text>联系客服
+  </button>
+</view>
+<view class='nav-list text-df'>
+  <view class='grays-text'>
+    <image src='/images/other/x4.jpg' class='radiu mr-sm'></image>
+  </view>
+  <view class='orderdetail'>
+    <view class='text-lg'>牛油果</view>
+    <view class='text-df'>2.22kg</view>
+    <view class='text-xl shenghong'>￥8.00</view>
+  </view>
+</view>
+<view class='nav-list text-df order-num'>
+  <view class='grays-text'>
+    下单时间：2019-01-01 12.00
+  </view>
+</view>
+<view class='nav-list text-df order-num'>
+  <view class='grays-text'>
+    商品总额：
+    <text class='iconfont  text-xl shenghong'>19.80</text>
+  </view>
+</view>
+
+<view class="bar bottomfix shadow btns allselect">
+  <view class='flex-sub text-sm'>
+    <view class="text-df">
+      <text class='text-xl shenghong'>￥10.00</text>
+    </view>
+  </view>
+  <view class='flex-sub text-sm gradual-red1'>
+    <view class="text-df">
+      <text>取消订单</text>
+    </view>
+  </view>
+  <view class='gradual-green flex-twice' bindtap='showModal' data-modal="bottomModal">支付</view>
+</view>

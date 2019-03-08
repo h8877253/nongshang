@@ -1,0 +1,64 @@
+page {
+  padding-bottom: 110rpx;
+}
+
+.swiper-screen {
+  margin: 0;
+}
+
+.xiaoliang {
+  display: flex;
+  font-size: 32rpx;
+}
+
+.xiaoliang-text {
+  font-size: 32rpx;
+  color: #888;
+  float: left;
+  overflow: hidden;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.xiaoliang-text text {
+  color: #222;
+  font-size: 30rpx;
+}
+
+.shopdetailTab {
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.lattice-image image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.evaluation {
+  width: 710rpx;
+  margin: 0 auto;
+}
+
+.evaluation-item {
+  background: #fff;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+
+.eval-btn {
+  font-size: 24rpx;
+  text-align: left;
+  line-height: 40rpx;
+  padding: 10rpx 20rpx;
+}
+
+.shopdetails image {
+  width: 100%;
+}
+
+.dianzanml {
+  margin-left: 140rpx;
+}

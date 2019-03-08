@@ -1,0 +1,76 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed none-bg text-white bg-img gradual-green shadow-blur" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='title-bar'>购物袋</view>
+  </bar>
+</custom>
+
+<view class="bar topflex" style='top:{{CustomBar}}px;'>
+  <view class='ml-sm'>
+    <text class='iconfont icon-goodsnewfill success-text fz-36'></text>
+    <text class='text-df ml-xs mr-sm'>购物袋</text>
+    <text class='nav-info grays-text text-sm'>亲,订单只能单个结算哦~~！o(*￣▽￣*)o</text>
+  </view>
+  <view class='shenghong block hollow round mr-sm' bindtap='isDelete' wx:if="{{hasList}}">
+    <text class='iconfont mr-xs text-md {{isDelete ? "icon-pullleft":"icon-delete"}}'></text>{{isDelete ? '取消':'删除'}}
+  </view>
+</view>
+<view wx:if="{{hasList}}" class='hasList'>
+  <radio-group class="nav-list shoplist " wx:for="{{ShopCartList}}" wx:key="{{index}}" wx:key bindchange="radioChange">
+    <view wx:if="{{!isDelete}}" class='isDelete mr-sm'>
+      <radio value="{{item.shopId}}" checked="{{item.checked}}" />
+      <!-- <text wx:if="{{item.checked}}" class="iconfont icon-check success checked" data-index="{{index}}" />
+      <text wx:else bindtap="selectList" class='iconfont icon-round no-checked' data-index="{{index}}" /> -->
+    </view>
+    <image src='{{item.shopSrc}}' class='radius mr-sm'></image>
+    <view class="nav-title shopdes">
+      <view class='text-lg'>{{item.shopTitle}}</view>
+      <view class='text-df'>{{item.shopKg}}</view>
+      <view class='text-xl shenghong'>￥{{item.shopPrice}}</view>
+    </view>
+    <view class="addorminus" wx:if="{{!isDelete}}">
+      <text bindtap="minusCount" data-index="{{index}}">-</text>
+      <text>{{item.shopNum}}</text>
+      <text bindtap="addCount" data-index="{{index}}">+</text>
+    </view>
+    <view wx:if="{{isDelete}}" class='delete-on iconfont icon-roundclosefill shenghong text-xxxl {{modalName== "modal"?"cur":""}}' bindtap='showModal' data-modal="modal" id="{{item.shopId}}">
+    </view>
+  </radio-group>
+</view>
+<view wx:else class="doc-icon-list" style='height:100%;'>
+  <view class='iconfont'>
+    <text class='text-xxl'>Σ( ° △ °)</text>
+    <text class='text-lg'>购物车是空的哦~</text>
+  </view>
+</view>
+<block wx:if="{{!isDelete}}">
+  <view class="bar bottomfix shadow btns allselect" wx:if="{{hasList}}">
+    <!-- <view class='flex-sub solid-right text-sm'> -->
+    <!-- <text wx:if="{{selectAllStatus}}" class="iconfont icon-check success sel-radio checked" bindtap="selectAll" />
+      <text wx:else class='iconfont icon-round sel-radio no-checked' bindtap="selectAll" />
+      <text>全选</text> -->
+    <!-- </view> -->
+    <view class='flex-sub text-sm'>
+      <view class="text-xs">
+        <text class='text-xl'>￥{{totalPrice}}</text>
+      </view>
+    </view>
+    <navigator class='gradual-green flex-twice' url="../ConfirmOrder/ConfirmOrder">提交订单</navigator>
+  </view>
+</block>
+
+<view class="modal-box {{modalName=='modal'?'cur':''}}">
+  <view class='modal-dialog'>
+    <view class="modal-title">
+      <view class='bar-close badge danger round' bindtap='closeModal'>
+        <text class='iconfont icon-close'></text>
+      </view>
+    </view>
+    <view class='modal-bd modal-message'>
+      真的删除当前订单？
+    </view>
+    <view class='modal-option'>
+      <view class='modal-option-btn' bindtap='closeModal'>取消</view>
+      <view class='modal-option-btn success-text' data-curshopid='{{curshopId}}' bindtap='deleteShop'>确认</view>
+    </view>
+  </view>
+</view>

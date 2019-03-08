@@ -1,0 +1,16 @@
+.nav-list {
+  display: block;
+  margin: 10rpx 10rpx 0;
+}
+
+.nav-list .nav-name {
+  line-height: 40rpx;
+}
+
+item.none {
+  display: none;
+}
+
+.serach-form input {
+  flex: 1;
+}

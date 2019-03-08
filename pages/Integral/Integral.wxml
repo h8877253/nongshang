@@ -1,0 +1,14 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 积分明细
+    </navigator>
+  </bar>
+</custom>
+
+
+
+<view class="nav-list" wx:for="{{integrallist}}" wx:key>
+  <view class="nav-title text-lg">{{item.title}}  <view class="nav-name text-grey text-df">{{item.text}}</view></view>
+    <view class="iconfont text-df {{item.num > 0 ? 'shenghong icon-add':'success-text'}}">{{item.num}}</view>
+</view>

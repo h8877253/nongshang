@@ -1,0 +1,27 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-orange" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 消息通知
+    </navigator>
+  </bar>
+</custom>
+<view class="cu-timeline success-text">
+  <view class="cu-item" url='../NoticeDetail/NoticeDetail'>
+    <view class="content gradual-orange">
+      <view class='badge radius capsule-badge'>
+        <text>2019-1-1</text>
+        <text>9:00</text>
+      </view>
+      <view>尊敬的#买家昵称#，得知您的宝贝已经安然送达，非常荣幸能为您提供服务，今后的使用中如有需要，请联系我们，愿效犬马之劳。祝您生活愉快~</view>
+    </view>
+  </view>
+  <view class="cu-item" url='../NoticeDetail/NoticeDetail'>
+    <view class="content gradual-orange">
+      <view class='badge radius capsule-badge '>
+        <text>2019-1-1</text>
+        <text>9:00</text>
+      </view>
+      <view>尊敬的#买家昵称#，得知您的宝贝已经安然送达，非常荣幸能为您提供服务，今后的使用中如有需要，请联系我们，愿效犬马之劳。祝您生活愉快~</view>
+    </view>
+  </view>
+</view>

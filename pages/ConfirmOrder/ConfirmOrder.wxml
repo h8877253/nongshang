@@ -1,0 +1,42 @@
+<import src="../../template/selectAddress/selectAddress.wxml" />
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 确认订单
+    </navigator>
+  </bar>
+</custom>
+<view class="nav-list seladdress" bindtap='showAddressModal'>
+  <view class="nav-name">
+    <view>{{defaultname}}</view>
+    <view>{{defaultphone}}</view>
+    <view>{{defaultarea}}{{defaultaddress}}</view>
+  </view>
+  <view class='grays-text text-sm'>修改收获地址</view>
+  <text class="iconfont icon-right"></text>
+</view>
+<view class='nav-list' wx:for="{{ConfirmOrderList}}" wx:key>
+  <image src='{{item.imgsrc}}' class='radius mr-sm'></image>
+  <view class='order-des'>
+    <view class='text-lg'>{{item.title}}</view>
+    <view class='text-df'>{{item.kg}}kg</view>
+    <view class='text-xl shenghong'>￥{{item.price}}</view>
+  </view>
+</view>
+
+<view class="bar bottomfix shadow btns allselect">
+  <view class='flex-sub text-sm'>
+    <view class="text-df">
+      总价：
+      <text class='text-xl shenghong'>￥10.00</text>
+    </view>
+  </view>
+  <view class='gradual-green flex-twice' bindtap='showModal' data-modal="bottomModal">支付</view>
+</view>
+<view class="modal-box bottom-modal {{modalName=='bottomModal'?'cur':''}}" bindtap='closeModal'>
+  <view class='modal-dialog'>
+    <view class='modal-option-btn success-text'>
+      <text class='iconfont icon-moneybag'></text> 微信支付</view>
+  </view>
+</view>
+<template is="selectAddress" data="{{addAddressModal,AddressListModal,AddressList,HasBingPhone,HasBingAddress,isDelete,isEdit,name,phone,address,area}}"></template>

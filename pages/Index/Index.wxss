@@ -1,0 +1,56 @@
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.list-title {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 32rpx;
+  width: 300rpx;
+  white-space: pre-wrap;
+  height: 64rpx;
+}
+
+.yudinglist {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.ins-list-img {
+  height: 260rpx;
+}
+
+.ins-list-img image {
+  height: 260rpx;
+}
+
+.ins-list-li {
+  background: #fff;
+}
+
+.yuding-title {
+  padding: 10rpx 15rpx;
+}
+
+.userHead {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.uporder {
+  display: block;
+  width: 180rpx;
+}
+.logo{width: 110rpx;height: 110rpx;}

@@ -1,0 +1,51 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 评价
+    </navigator>
+  </bar>
+</custom>
+<view class="nav-list Evaluation-box">
+  <view class='Evaluation'>
+    <image src='/images/other/x9.jpg' class='radius mr-sm'></image>
+    <view class='order-des'>
+      <view class='text-lg'>葡萄</view>
+      <view class='text-df'>2.22kg</view>
+      <view class='text-xl shenghong'>￥16.00</view>
+    </view>
+  </view>
+  <view class='rating-item'>
+    <view class='rating-title'>商品评分</view>
+    <view class='rating-star'>
+      <text wx:for="{{5}}" wx:key class="iconfont {{index<rating.scores?'icon-favorfill warning-text':'icon-favor gray-text'}}" bindtap='setScores' data-index='{{index+1}}'></text>
+      <text wx:if="{{rating.scores==5}}">非常好</text>
+      <text wx:if="{{rating.scores==4}}">好</text>
+      <text wx:if="{{rating.scores==3}}">一般</text>
+      <text wx:if="{{rating.scores==2}}">差</text>
+      <text wx:if="{{rating.scores==1}}">非常差</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="form-box">
+  <view class="nav-title">评价</view>
+  <view class="lattice-image">
+    <textarea placeholder='请输入评价内容' maxlength="-1"></textarea>
+  </view>
+</view>
+<view class='form-box'>
+  <view class="nav-title ">添加图片</view>
+  <view class="lattice-image">
+    <view wx:for="{{images}}" wx:key>
+      <image src='{{item}}' mode='aspectFill'></image>
+      <view class="iconfont icon-close" data-index="{{index}}" bindtap="removeImage"></view>
+    </view>
+    <view class='lattice-btn' bindtap="chooseImage" wx:if="{{images.length < 3}}">
+      <text class='iconfont icon-cameraadd'></text>
+    </view>
+  </view>
+</view>
+<view class="bar bottomfix shadow justify-center">
+  <button class='btn success round basis-sm'>提交评价</button>
+</view>

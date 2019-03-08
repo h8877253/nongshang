@@ -1,0 +1,173 @@
+page {
+  padding-bottom: 100rpx;
+}
+
+.nav-list {
+  padding: 20rpx 10rpx;
+  margin-top: 15rpx;
+  margin: 10rpx 10rpx 0;
+  position: relative;
+}
+
+.nav-list icon {
+  line-height: 50rpx;
+}
+
+.form-box {
+  padding: 20rpx 25rpx;
+  margin: 5rpx 20rpx;
+  margin-top: 15rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list radio {
+  text-align: left;
+}
+
+.shoplist image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.shopdes {
+  flex: 1;
+  height: 200rpx;
+}
+
+.isDelete>text {
+  display: inline-block;
+  width: 42rpx;
+  height: 42rpx;
+  text-align: center;
+  line-height: 42rpx;
+  border-radius: 100%;
+  font-weight: 600;
+}
+
+.checked {
+  font-size: 30rpx;
+}
+
+.no-checked {
+  font-size: 40rpx;
+  color: #dbdbdb;
+}
+
+.allselect .sel-radio {
+  display: inline-block;
+  width: 42rpx;
+  height: 42rpx;
+  text-align: center;
+  line-height: 42rpx;
+  border-radius: 100%;
+  font-weight: 600;
+  margin-right: 20rpx;
+}
+
+.addorminus {
+  position: absolute;
+  right: 10rpx;
+  top: 100rpx;
+}
+
+.addorminus text {
+  display: inline-block;
+  color: #555;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 10rpx 20rpx;
+  text-align: center;
+  margin-right: 5rpx;
+  border: 2rpx solid rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+}
+
+.addorminus text:last-child {
+  margin: 0;
+}
+
+.bar .ml-sm {
+  flex: 1;
+}
+
+.text-lg {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 72rpx;
+  line-height: 36rpx;
+  white-space: pre-wrap;
+  display: -webkit-box;
+}
+
+.text-df {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.delete-on {
+  position: absolute;
+  top: 88rpx;
+  right: 20rpx;
+}
+
+.doc-icon-list {
+  width: 100%;
+  height: 100%;
+  margin-top: 100rpx;
+}
+
+.doc-icon-list .iconfont {
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  padding: 450rpx 0;
+  border-top: 1rpx solid #eee;
+  color: #888;
+}
+
+.doc-icon-list .iconfont::before {
+  font-size: 50rpx;
+}
+
+.doc-icon-list .iconfont text {
+  display: block;
+  color: #aaa;
+  font-size: 36rpx;
+  line-height: 60rpx;
+  font-family: Arial, -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.nodatalist {
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+.bar .shenghong {
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.topflex {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.hasList {
+  margin-top: 100rpx;
+}
+
+.text-xxxl {
+  font-size: 50rpx;
+}
+.allselect navigator{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.fz-36{font-size: 36rpx;}

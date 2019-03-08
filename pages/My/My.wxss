@@ -1,0 +1,216 @@
+page {
+  padding-bottom: 50px;
+}
+
+.user-img {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.nav-list {
+  position: relative;
+  color: #666;
+}
+
+.nav-list .nav-title {
+  font-size: 48rpx;
+}
+
+.nav-list .nav-name {
+  font-size: 26rpx;
+  color: #666;
+  text-align: left;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+  flex: 1;
+}
+
+.nav-list icon {
+  line-height: 50rpx;
+}
+
+.nav-info {
+  flex: 1;
+  text-align: right;
+}
+
+.form-item input {
+  padding: 0 40rpx;
+  text-align: left;
+}
+
+.picker {
+  text-align: left;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.form-title {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.form-item .menpaihao {
+  padding: 0;
+  flex: 1;
+}
+
+.nav-list radio {
+  text-align: right;
+}
+
+.deleteoradd {
+  padding: 40rpx 0;
+  text-align: center;
+}
+
+.deleteoradd button:nth-child(1) {
+  margin-right: 20rpx;
+}
+
+.deleteoradd button:nth-child(2) {
+  margin-left: 20rpx;
+}
+
+.delete-on {
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+
+.text-xxxl {
+  font-size: 50rpx;
+}
+
+.name {
+  width: 50rpx;
+  word-break: break-all;
+}
+
+.addresslist {
+  padding: 15rpx 10rpx;
+  margin: 5rpx 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.addcon {
+  margin: 0;
+  padding: 0 10rpx;
+}
+
+.form-title {
+  font-size: 24rpx;
+}
+
+.picker {
+  font-size: 28rpx;
+}
+
+.form-item input {
+  font-size: 28rpx;
+}
+
+.addresslist-box {
+  width: 720rpx;
+}
+
+.list-icon {
+  font-size: 50rpx;
+  margin-right: 20rpx;
+}
+
+.addresstext {
+  word-break: break-all;
+}
+
+.cu-tag {
+  font-size: 24rpx;
+  color: #666;
+  vertical-align: middle;
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 12rpx 16rpx 10rpx;
+  line-height: 1;
+  background: #fff;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+
+.cu-tag.sm {
+  font-size: 20rpx;
+  padding: 10rpx 14rpx 8rpx;
+}
+
+.list-badge .shenghong-text {
+  background: #e54d42;
+  color: #fff;
+}
+
+.gif-black {
+  mix-blend-mode: screen;
+  width: 100%;
+  height: 172rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.user {
+  background: none;
+}
+
+.myflex {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.first-mt {
+  margin-top: 190rpx;
+}
+
+.user .user-top {
+  padding: 15rpx 30rpx;
+}
+
+.erweima {
+  font-size: 360rpx;
+}
+
+.modal-option-btn::after {
+  border: none;
+}
+
+.modal-option-btn {
+  background: #fff;
+  font-size: 30rpx;
+  outline: none;
+  border: none;
+  list-style: none;
+}
+
+.nav-til {
+  font-size: 26rpx;
+  color: #666;
+  text-align: left;
+  line-height: 40rpx;
+}
+
+.user-name {
+  font-size: 24rpx;
+  display: flex;
+}
+
+.user-name .integral {
+  flex: 1;
+  text-align: right;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.user-name .integral .iconfont {
+  font-size: 36rpx;
+  color: #fff;
+}

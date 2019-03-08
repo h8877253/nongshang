@@ -1,0 +1,98 @@
+page {
+  background: #f1f1f1;
+  height: 100%;
+}
+
+.nav {
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-green {
+  background-color: #39b54a !important;
+  color: #fff !important;
+}
+
+.text-white, .line-white, .lines-white {
+  color: #fff !important;
+}
+
+.nav item {
+  height: 40px;
+  display: inline-block;
+  line-height: 40px;
+  font-size: 26rpx;
+}
+
+.text-orange, .line-orange, .lines-orange {
+  color: #f37b1d !important;
+}
+
+.flex-sub {
+  flex: 1;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.text-olive, .line-olive, .lines-olive {
+  color: #8dc63f !important;
+}
+
+.text-green, .line-green, .lines-green {
+  color: #fff;
+  background: #39b54a;
+}
+
+.order-list {
+  height: 45px;
+  line-height: 50px;
+}
+
+.goods-text {
+  text-align: left;
+}
+
+.hollow .iconfont {
+  font-size: 32rpx;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.scroll-view-x {
+  background-color: #fff;
+  white-space: nowrap;
+  position: fixed;
+  z-index: 10;
+}
+
+.danger-text {
+  color: #dd514c;
+}
+
+.success-text {
+  color: #39b54a;
+}
+
+.ordernum {
+  top: 5rpx;
+  right: 2rpx;
+}
+.order-item .bg-white{background: #fff;}
+/* 去掉默认滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

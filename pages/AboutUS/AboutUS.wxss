@@ -1,0 +1,12 @@
+.aboutcon {
+  padding: 50rpx;
+  margin: 50rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  background: #fff;
+}
+
+.line-h {
+  line-height: 42rpx;
+  letter-spacing: 5rpx;
+}

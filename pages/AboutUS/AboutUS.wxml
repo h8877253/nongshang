@@ -1,0 +1,17 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 关于我们
+    </navigator>
+  </bar>
+</custom>
+
+
+<view class="aboutcon bg-white radius shadow-lg">
+  <view class="flex justify-center mb-sm">
+    <view class='text-center'>
+      <view class="btn success round basis-sm">蜀粮生态</view>
+    </view>
+  </view>
+  <text class="text-grey text-sm line-h">蜀粮生态主要经营农业技术开发、技术咨询、技术转让、技术服务；设计、制作、代理、发布广告；展览展示服务；会议服务；种植（限分支机构经营）、销售蔬菜、水果农副产品（法律法规限制的除外）经济林木；内陆养殖（限分之机构经营、全民所有制水域除外）；进出口贸易，工程咨询服务，零售：农机产品、肥料、农膜。</text>
+</view>

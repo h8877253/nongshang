@@ -1,0 +1,40 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 反馈建议
+    </navigator>
+  </bar>
+</custom>
+<view class="bar">
+  <view class='ml-sm'>
+    <text class='iconfont icon-titles success-text'></text>
+    <text class='text-lg ml-xs'>问题类型</text>
+  </view>
+</view>
+<radio-group bindchange="radioChange">
+  <view class="nav-list" wx:for="{{FeedbackList}}" wx:key="{{index}}">
+    <view class="nav-title">{{item.title}}</view>
+    <view class="nav-name">{{item.titledes}}</view>
+    <radio value="{{item.id}}" checked="{{item.checked}}" class='list-icon' bindchange="radioChange" />
+  </view>
+</radio-group>
+
+<view class="nav-list">
+  <view class="nav-title elaborate">详细描述</view>
+  <textarea placeholder='如果您对我们有什么建议、想法和期望、请告诉我们 ♪(^∇^*)' maxlength="-1"></textarea>
+</view>
+<view class='form-box'>
+  <view class="nav-title ">图片上传</view>
+  <view class="lattice-image">
+    <view wx:for="{{images}}" wx:key>
+      <image src='{{item}}' mode='aspectFill'></image>
+      <view class="iconfont icon-close" data-index="{{index}}" bindtap="removeImage"></view>
+    </view>
+    <view class='lattice-btn' bindtap="chooseImage" wx:if="{{images.length < 3}}">
+      <text class='iconfont icon-cameraadd'></text>
+    </view>
+  </view>
+</view>
+<view class="bar bottomfix shadow justify-center ">
+  <button class='btn success round basis-sm'>提交保存</button>
+</view>

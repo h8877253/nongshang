@@ -1,0 +1,210 @@
+<import src="../../template/selectAddress/selectAddress.wxml" />
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed none-bg text-white bg-img gradual-green shadow-blur" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='title-bar'>我的</view>
+  </bar>
+</custom>
+<view class="gradual-green shadow-blur myflex" style='top:{{CustomBar}}px'>
+  <view class="user">
+    <view class="user-top">
+      <view class="user-img">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="user-text">
+        <view class="user-name">
+          <open-data type="userNickName" class="text-lg" lang="zh_CN"></open-data>
+          <navigator class='integral' url='../Integral/Integral'>
+            <text class='iconfont icon-recharge'></text> 积分明细
+          </navigator>
+        </view>
+        <view hclass='xs'>已推广6人，积分：1200</view>
+      </view>
+    </view>
+  </view>
+  <image src='/images/tabbar/wave.gif' mode='scaleToFill' class='gif-black'></image>
+</view>
+<navigator class="nav-list first-mt" url="../MyData/MyData">
+  <view class="nav-title iconfont icon-my success-text"></view>
+  <view class="nav-til">个人设置</view>
+  <view class='nav-info grays-text text-sm'>设置个人信息</view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+<view class="nav-list" bindtap='showPhoneModal' data-modal="BingPhoneModal">
+  <view class="nav-title iconfont icon-mobile primary-text"></view>
+  <view class="nav-til">绑定手机号</view>
+  <view class='nav-info grays-text text-sm'>{{HasBingPhone ? "更换手机号" : "未绑定手机号"}}</view>
+  <text class="iconfont icon-right"></text>
+</view>
+<view class="nav-list" bindtap='showAddressModal'>
+  <view class="nav-title iconfont icon-location secondary-text"></view>
+  <view class="nav-til">收货地址</view>
+  <view class='nav-info grays-text text-sm'>{{AddressList.length > 0 ? "已绑定收货地址" : "未绑定收货地址"}}</view>
+  <text class="iconfont icon-right"></text>
+</view>
+<view class="nav-list" bindtap='showQrCode' data-modal="QrCode">
+  <view class="nav-title iconfont icon-qrcode danger-text"></view>
+  <view class="nav-til">我的二维码</view>
+  <view class='nav-info grays-text text-sm'>二维码分享可获得积分哦，积分可抵现</view>
+  <text class="iconfont icon-right"></text>
+</view>
+<navigator url="../Activity/Activity" class="nav-list">
+  <view class="nav-title iconfont icon-present purple-text"></view>
+  <view class="nav-til">蜀粮农业活动</view>
+  <view class='nav-info grays-text text-sm'>您的精致生活从这里开始</view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+<navigator url="../Message/Message" class="nav-list">
+  <view class="nav-title iconfont icon-comment warning-text"></view>
+  <view class="nav-til">消息通知</view>
+  <view class='nav-info grays-text text-sm'>您有优惠卷即将过期，赶紧去使用吧</view>
+  <view class="list-badge">
+    <view class="cu-tag round sm shenghong-text ml-sm">5</view>
+  </view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+<navigator url="../Logistics/Logistics" class="nav-list">
+  <view class="nav-title iconfont icon-deliver secondary-text"></view>
+  <view class="nav-til">交易物流</view>
+  <view class='nav-info grays-text text-sm'>已经签收，您在Playboy专卖店购买的</view>
+  <view class="list-badge">
+    <view class="cu-tag round sm shenghong-text ml-sm">5</view>
+  </view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+<navigator class="nav-list">
+  <view class="nav-title iconfont icon-group shenghong"></view>
+  <view class="nav-til">分销中心</view>
+  <view class='nav-info grays-text text-sm'>分销中心</view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+
+<navigator url="../Feedback/Feedback" class="nav-list">
+  <view class="nav-title iconfont icon-edit"></view>
+  <view class="nav-til">反馈意见</view>
+  <view class='nav-info grays-text text-sm'>您的意见有助于我们不断完善功能</view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+<navigator url="../HelpCenter/HelpCenter" class="nav-list">
+  <view class="nav-title iconfont icon-question primary-text"></view>
+  <view class="nav-til">帮助中心</view>
+  <view class='nav-info grays-text text-sm'>ヽ(✿ﾟ▽ﾟ)ノ 欢迎咨询</view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+<navigator url="../AboutUS/AboutUS" class="nav-list">
+  <view class="nav-title iconfont icon-wang weixin-text"></view>
+  <view class="nav-til">关于我们</view>
+  <view class='nav-info grays-text text-sm'>蜀粮科技</view>
+  <text class="iconfont icon-right"></text>
+</navigator>
+
+<!-- 绑定手机 -->
+<view class="modal-box {{modalName=='BingPhoneModal'?'cur':''}}">
+  <view class='modal-dialog'>
+    <view class="modal-title">
+      <text>{{HasBingPhone ? "更换手机号" : "绑定手机号"}}</text>
+      <view class='bar-close badge danger round' bindtap='closePhoneModal'>
+        <text class='iconfont icon-close'></text>
+      </view>
+    </view>
+    <view class="form-item">
+      <input type="text" class="form-input" name="title" value="{{bingphone}}" bindinput='bingPhone' placeholder="请输入手机号" />
+      <view class='form-input-btn'>
+        <button class='success btn' disabled='{{disabled}}' bindtap="getPhoneCode">{{code}}</button>
+      </view>
+    </view>
+    <view class="form-item">
+      <input type="text" class="form-input" name="title" value="" placeholder="请输入验证码" />
+    </view>
+    <view class='modal-option'>
+      <view class='modal-option-btn' bindtap='closePhoneModal'>取消</view>
+      <view class='modal-option-btn success-text' bindtap='bindingPhone'>确认</view>
+    </view>
+  </view>
+</view>
+<!-- 添加or修改地址 -->
+<!-- <view class="modal-box {{addAddressModal=='addAddressModal'?'cur':''}}" style='z-index:9999'>
+  <view class='modal-dialog'>
+    <view class="modal-title">
+      <text>{{isEdit ? "修改地址":"添加地址"}}</text>
+    </view>
+    <view class='form-item'>
+      <view class='form-title'>姓名</view>
+      <input type="text" class="menpaihao" name="title" bindinput='watchName' value="{{name}}" placeholder="请输入姓名" />
+    </view>
+    <view class='form-item'>
+      <view class='form-title'>联系电话</view>
+      <input type="text" class="menpaihao" name="title" bindinput='watchPhone' value="{{phone}}" placeholder="请输入手机号" />
+    </view>
+    <view class='form-item'>
+      <view class='form-title'>
+        区域选择
+      </view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{area}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{area[0]}}，{{area[1]}}，{{area[2]}}
+        </view>
+      </picker>
+    </view>
+    <view class='form-item'>
+      <view class='form-title'>门牌号</view>
+      <input type="text" class="menpaihao" name="title" bindinput='watchAddress' value="{{address}}" placeholder="请输入详细地址" />
+    </view>
+
+    <view class='modal-option'>
+      <view class='modal-option-btn' bindtap='closeAddressModal'>取消</view>
+      <view class='modal-option-btn success-text' wx:if="{{!isEdit}}" bindtap='AddAddress'>确认</view>
+      <view class='modal-option-btn success-text' wx:else bindtap='editAddress'>确认修改</view>
+    </view>
+  </view>
+</view> -->
+<!-- 选择地址列表 -->
+<!-- <view class="modal-box {{AddressListModal=='AddressListModal'?'cur':''}}">
+  <view class='modal-dialog addresslist-box'>
+    <view class="modal-title">
+      <text>选择地址</text>
+      <view class='bar-close badge danger round' bindtap='closeAddressListModal'>
+        <text class='iconfont icon-close'></text>
+      </view>
+    </view>
+    <radio-group bindchange="radioChange">
+      <view class="nav-list addresslist" wx:for="{{AddressList}}" wx:key="{{index}}">
+        <view class="nav-name addcon">
+          <view>姓名：{{item.name}} 手机号：{{item.phone}}</view>
+          <view class='addresstext'>区域：{{item.area[0]}}{{item.area[1]}}{{item.area[2]}}</view>
+          <view class='addresstext'>地址：{{item.address}}</view>
+        </view>
+        <view wx:if='{{!isDelete}}' class='list-icon iconfont icon-post grays-text' bindtap='editAddressModel' id="{{item.id}}"></view>
+        <radio wx:if='{{!isDelete}}' value="{{item.id}}" checked="{{item.checked}}" />
+        <view wx:if='{{isDelete}}' class='delete-on iconfont icon-roundclosefill shenghong text-xxxl' id="{{item.id}}" bindtap='deleteAddress'></view>
+      </view>
+    </radio-group>
+    <view class='deleteoradd'>
+      <button class='gradual-red1 btn round' bindtap='showDeleteAddress' wx:if="{{AddressList.length > 0}}">
+        <text class='iconfont icon-delete mr-xs'></text>{{isDelete ? "取消删除" : "删除"}}{{}}</button>
+      <button class='gradual-green btn round' bindtap='newAddAddress'>
+        <text class='iconfont icon-roundadd mr-xs'></text>新增地址
+      </button>
+    </view>
+    <view class='modal-option' wx:if="{{AddressList.length > 0}}">
+      <view class='modal-option-btn' bindtap='closeAddressListModal'>取消</view>
+      <view class='modal-option-btn success-text' bindtap='setDefaultAddress'>确定</view>
+    </view>
+  </view>
+</view> -->
+<template is="selectAddress" data="{{addAddressModal,AddressListModal,AddressList,HasBingPhone,HasBingAddress,isDelete,isEdit,name,phone,address,area}}"></template>
+<!-- 二维码分享 -->
+<view class="modal-box {{modalName=='QrCode'?'cur':''}}">
+  <view class='modal-dialog'>
+    <view class="modal-title">
+      <text>二维码分享</text>
+      <view class='bar-close badge danger round' bindtap='closePhoneModal'>
+        <text class='iconfont icon-close'></text>
+      </view>
+    </view>
+    <text class='iconfont icon-qrcode erweima'></text>
+    <view class='modal-option'>
+      <button class='modal-option-btn' bindtap='downLoadImage'>下载二维码分享</button>
+      <button class='modal-option-btn success-text' open-type="share">分享给微信好友</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,137 @@
+.nav-list {
+  font-size: 28rpx;
+  margin: 0;
+  padding: 20rpx 25rpx;
+  border-radius: 0;
+  margin-bottom: 6rpx;
+}
+
+.nav-info {
+  flex: 1;
+  text-align: right;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+
+.nav-list .nav-title {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.sex .success-text {
+  margin: 0;
+}
+
+.nav-name {
+  font-size: 28rpx;
+}
+
+switch, checkbox, radio {
+  position: relative;
+}
+
+switch::after, switch::before {
+  font-family: "iconfont" !important;
+  content: "\e645";
+  position: absolute;
+  color: #fff;
+  top: 0%;
+  left: 0rpx;
+  font-size: 32rpx;
+  line-height: 66rpx;
+  height: 64rpx;
+  width: 26px;
+  text-align: center;
+  pointer-events: none;
+  transform: scale(0, 0);
+  transition: all 0.3s ease-in-out 0s;
+  z-index: 9;
+}
+
+switch::before {
+  content: "\e646";
+  right: 0;
+  transform: scale(1, 1);
+  left: auto;
+}
+
+switch[checked]::after {
+  transform: scale(1, 1);
+}
+
+switch[checked]::before {
+  transform: scale(0, 0);
+}
+
+switch[checked]::before {
+  transform: scale(0, 0);
+}
+
+switch .wx-switch-input {
+  background: #aaa !important;
+  border: none;
+  padding: 0 24px;
+  width: 48px;
+  height: 26px;
+  margin: 0;
+  border-radius: 100rpx;
+}
+
+switch .wx-switch-input::after {
+  margin: auto !important;
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 100rpx;
+  left: 0rpx !important;
+  top: 0rpx !important;
+  bottom: 0rpx !important;
+  position: absolute;
+  transform: scale(0.9, 0.9) !important;
+  transition: all 0.1s ease-in-out 0s;
+}
+
+switch .wx-switch-input-checked::after {
+  margin: auto !important;
+  left: 22px !important;
+  box-shadow: none !important;
+}
+
+switch.radius .wx-switch-input::after, switch.radius .wx-switch-input,
+switch.radius .wx-switch-input::before {
+  border-radius: 10rpx;
+}
+
+switch .wx-switch-input::before, radio.radio::before,
+checkbox .wx-checkbox-input::before, radio .wx-radio-input::before {
+  display: none;
+}
+
+.switch-sex::after {
+  content: "\e71c";
+}
+
+.switch-sex::before {
+  content: "\e71a";
+}
+
+.switch-sex .wx-switch-input {
+  background: #e54d42 !important;
+  border-color: #e54d42;
+}
+
+.switch-sex[checked] .wx-switch-input {
+  background: #0081ff !important;
+  border-color: #0081ff !important;
+}
+
+.icon-female {
+  color: #e54d42;
+}
+
+.icon-male {
+  color: #0081ff;
+}
+
+.sex {
+  padding: 20rpx 25rpx 20rpx 5rpx;
+}

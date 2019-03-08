@@ -1,0 +1,45 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 补发申请
+    </navigator>
+  </bar>
+</custom>
+<view class="nav-list Evaluation-box">
+  <view class='Evaluation'>
+    <image src='/images/other/x9.jpg' class='radius mr-sm'></image>
+    <view class='order-des'>
+      <view class='text-lg'>葡萄</view>
+      <view class='text-df'>2.22kg</view>
+      <view class='text-xl shenghong'>￥16.00</view>
+      <view class='gray-text'>购买数量
+        <text class='blick-text text-lg'>1</text>申请数量
+        <text class='blick-text text-lg'>1</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class='form-box'>
+  <view class="nav-title">申请原因</view>
+  <view class="lattice-image">
+    <textarea placeholder='请描述不敢申请的具体原因、还可上传最低四张图片哦' maxlength="-1"></textarea>
+  </view>
+</view>
+
+<view class='form-box'>
+  <view class="nav-title ">添加图片</view>
+  <view class="lattice-image">
+    <view wx:for="{{images}}" wx:key>
+      <image src='{{item}}' mode='aspectFill'></image>
+      <view class="iconfont icon-close" data-index="{{index}}" bindtap="removeImage"></view>
+    </view>
+    <view class='lattice-btn' bindtap="chooseImage" wx:if="{{images.length < 3}}">
+      <text class='iconfont icon-cameraadd'></text>
+    </view>
+  </view>
+</view>
+<view class="bar bottomfix shadow justify-center">
+  <button class='btn success round basis-sm'>提交申请</button>
+</view>

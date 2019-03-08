@@ -1,0 +1,58 @@
+.nav-list {
+  margin: 0;
+  border-radius: 0;
+}
+
+.timer {
+  flex: 1;
+  text-align: right;
+}
+
+.address {
+  flex: 8;
+}
+
+.address view {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.address-icon {
+  flex: 1;
+  text-align: left;
+}
+
+.order-num {
+  margin-top: 10rpx;
+}
+
+.order-num .grays-text {
+  flex: 1;
+}
+
+.grays-text image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.orderdetail .text-lg {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 72rpx;
+  line-height: 36rpx;
+  white-space: pre-wrap;
+  display: -webkit-box;
+  color: #444;
+}
+
+.orderdetail .text-df {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.orderdetail {
+  flex: 1;
+}

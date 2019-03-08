@@ -1,0 +1,54 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed none-bg text-white bg-img gradual-green shadow-blur" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='title-bar'>分类</view>
+  </bar>
+</custom>
+<view class="gradual-green bar searchfix" style='top:{{CustomBar}}px'>
+  <view class="userinfo-avatar round mh-sm">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class='serach-round mr-sm'>
+    <text class="iconfont icon-shop success-text text-lg"></text>
+    <input type="text" class="search-input sub" placeholder="请输入关键字，搜索商品" confirm-type="search" />
+  </view>
+  <view class='mh-sm text-sm'>搜索
+    <text class="iconfont icon-search"></text>
+  </view>
+</view>
+<view class="container_search" style="height:{{windowHeight}}px;">
+  <view style="position:relative;height:{{windowHeight - 50}}px ;overflow:hidden">
+    <scroll-view class="nav_left" scroll-y="true" style="height:{{windowHeight -50}}px;top:{{CustomBar + 50}}px;">
+      <view style="height:auto;">
+        <block wx:for="{{ClassifyList}}" wx:key>
+          <!--当前项的id等于item项的id，那个就是当前状态-->
+          <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+          <view class="nav_left_items {{curNav == item.FirstType.id ? 'gradual-green' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.FirstType.id}}">{{item.FirstType.name}}</view>
+        </block>
+
+      </view>
+              <view class="nav_left_items gradual-green diqu">地区</view>
+    </scroll-view>
+    <!--右侧栏-->
+    <scroll-view class="nav_right" scroll-y="true" style="height:{{windowHeight -50}}px;" bindscrolltolower="loadmore">
+      <view style='height:100%;'>
+        <view class="nav_right_items" wx:if="{{ ClassifyList[curIndex].SecondType.length !== 0}}">
+          <view class='allshoplist'>
+            <image class='radius gradual-green-top' src="/images/tabbar/all.png"></image>
+          </view>
+        </view>
+        <view class="nav_right_items" wx:for="{{ClassifyList[curIndex].SecondType}}" wx:key>
+          <view bindtap='getTypeDetail' data-id="{{item.id}}">
+            <image class='radius' src="{{item.classifysrc}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+        <view class="nodata_text" wx:if="{{ ClassifyList[curIndex].SecondType.length == 0}}" style='display: flex;justify-content:center;align-items:Center;height:100%;'>
+          <view class='mode-text nodata'>
+            <view class='gray-text fz-16'>o((⊙﹏⊙))o.</view>
+            <view class='gray-text'>该分类暂无数据</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

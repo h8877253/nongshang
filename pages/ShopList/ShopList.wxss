@@ -1,0 +1,63 @@
+.classifylist {
+  height: 50px;
+  line-height: 50px;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+.classifylist item {
+  font-size: 30rpx;
+  width: 20%;
+}
+
+.searchfix {
+  z-index: 9999;
+}
+
+.price-up {
+  width: 18rpx;
+  height: 50rpx;
+  display: inline-block;
+}
+
+.price-up text {
+  font-size: 16rpx;
+  display: block;
+  height: 12rpx;
+  line-height: 12rpx;
+}
+
+.icon-filter {
+  font-size: 32rpx;
+}
+
+.shoplist-title {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  min-height: 36rpx;
+  line-height: 36rpx;
+  white-space: pre-wrap;
+  font-size: 28rpx;
+}
+
+.column-li {
+  padding: 10rpx;
+  margin: 6rpx;
+  background: #fff;
+  /* border-radius: 8rpx; */
+}
+
+.justify-between view text {
+  color: #333;
+}
+
+.column-box {
+  margin-top: 100px;
+}
+.logo{width: 110rpx;height: 110rpx;}

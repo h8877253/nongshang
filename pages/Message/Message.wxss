@@ -1,0 +1,26 @@
+page {
+  background: #f5f5f5;
+}
+
+.badge text:nth-child(1) {
+  background: #fff;
+  color: #e92758;
+}
+.cu-timeline>.cu-item:not([class*="icon-"])::before {
+  content: "\e666";
+  color: #ff9700;
+}
+
+.badge text:nth-child(2) {
+  border: 1rpx solid #fff;
+  border-top-right-radius: 6rpx;
+  border-bottom-right-radius: 6rpx;
+}
+
+.content {
+  box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(233, 39, 88, 0.2);
+}
+
+.capsule-badge {
+  margin-bottom: 20rpx;
+}

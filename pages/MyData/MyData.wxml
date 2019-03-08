@@ -1,0 +1,67 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 个人设置
+    </navigator>
+  </bar>
+</custom>
+<view class="nav-list" url="../MyData/MyData">
+  <view class="nav-title iconfont icon-my success-text"></view>
+  <view class="nav-name">头像</view>
+  <view class='nav-info grays-text'>
+    <image src='http://image.weilanwl.com/img/square-3.jpg' mode='widthFix' class='round img-sm'></image>
+  </view>
+  <text class="iconfont icon-right"></text>
+</view>
+<view class="nav-list" url="../MyData/MyData">
+  <view class="nav-title iconfont icon-write warning-text"></view>
+  <view class="nav-name">昵称</view>
+  <view class='nav-info grays-text text-sm'>尔尔</view>
+  <text class="iconfont icon-right" bindtap='showModal' data-modal="nichengModel"></text>
+</view>
+<view class="nav-list sex" url="../MyData/MyData">
+  <view class="nav-title success-text">
+    <text class='iconfont icon-male'></text>
+    <text class='iconfont icon-female'></text>
+  </view>
+  <view class="nav-name">性别</view>
+  <view class='nav-info grays-text text-sm'>
+    <switch class='switch-sex' checked></switch>
+  </view>
+</view>
+<view class="nav-list" url="../MyData/MyData">
+  <view class="nav-title iconfont icon-calendar grays-text"></view>
+  <view class="nav-name">出身日期</view>
+  <view class='nav-info grays-text text-sm'>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+  </view>
+  <text class="iconfont icon-right"></text>
+</view>
+<view class="nav-list first-mt" url="../MyData/MyData">
+  <view class="nav-title iconfont icon-mail secondary-text"></view>
+  <view class="nav-name">联系邮箱</view>
+  <view class='nav-info grays-text text-sm'>11517104092@qq.com</view>
+  <text class="iconfont icon-right"></text>
+</view>
+
+<view class="modal-box {{modalName=='nichengModel'?'cur':''}}">
+  <view class='modal-dialog'>
+    <view class="modal-title">
+      <text>修改昵称</text>
+      <view class='bar-close badge danger round' bindtap='closeModal'>
+        <text class='iconfont icon-close'></text>
+      </view>
+    </view>
+    <view class="form-item">
+      <input type="text" class="form-input" name="title" value="" placeholder="请输入新昵称" />
+    </view>
+    <view class='modal-option'>
+      <view class='modal-option-btn' bindtap='closeModal'>取消</view>
+      <view class='modal-option-btn success-text' bindtap='closeModal'>确认</view>
+    </view>
+  </view>
+</view>

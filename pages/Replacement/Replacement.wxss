@@ -1,0 +1,73 @@
+page {
+  padding-bottom: 110rpx;
+}
+
+.nav-list {
+  padding: 20rpx 25rpx;
+  margin-top: 15rpx;
+  border-radius: 0;
+}
+
+.nav-list icon {
+  line-height: 50rpx;
+}
+
+.elaborate {
+  width: 50rpx;
+  word-spacing: 19px;
+  line-height: 36px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-box {
+  padding: 20rpx 25rpx;
+  margin: 5rpx 20rpx;
+  margin-top: 15rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list radio {
+  flex: 1;
+  text-align: right;
+}
+
+.doc-main {
+  flex: 1;
+}
+
+.rating-star .iconfont {
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+
+.rating-star text:nth-child(6) {
+  margin-left: 20rpx;
+}
+
+.Evaluation image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.Evaluation {
+  display: flex;
+}
+
+.order-des {
+  flex: 1;
+}
+
+.Evaluation-box {
+  display: block;
+  margin: 0;
+}
+
+.text-df {
+  height: 56rpx;
+  line-height: 56rpx;
+}
+
+.blick-text {
+  padding: 0 20rpx;
+}

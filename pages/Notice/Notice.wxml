@@ -1,0 +1,52 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 通知公告
+    </navigator>
+  </bar>
+</custom>
+
+
+<view class="cu-timeline success-text">
+  <navigator class="cu-item" url='../NoticeDetail/NoticeDetail'>
+    <view class="content gradual-green">
+      <view class='badge radius capsule-badge'>
+        <text>2019-1-1</text>
+        <text>9:00</text>
+      </view>
+      <view>1.蜀粮科技组织架构调整</view>
+      <view>2.蜀粮科技组织架构调整</view>
+      <view>3.蜀粮科技组织架构调整</view>
+      <view class="lattice-image">
+        <view>
+          <image src='/images/other/y1.jpg' mode='aspectFill'></image>
+        </view>
+        <view>
+          <image src='/images/other/y2.jpg' mode='aspectFill'></image>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <navigator class="cu-item" url='../NoticeDetail/NoticeDetail'>
+    <view class="content gradual-green">
+      <view class='badge radius capsule-badge '>
+        <text>2019-1-1</text>
+        <text>9:00</text>
+      </view>
+      <view>1.蜀粮科技组织架构调整</view>
+      <view>2.蜀粮科技组织架构调整</view>
+      <view>3.蜀粮科技组织架构调整</view>
+      <view class="lattice-image">
+        <view>
+          <image src='/images/other/y3.jpg' mode='aspectFill'></image>
+        </view>
+        <view>
+          <image src='/images/other/y4.jpg' mode='aspectFill'></image>
+        </view>
+        <view>
+          <image src='/images/other/y5.jpg' mode='aspectFill'></image>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>

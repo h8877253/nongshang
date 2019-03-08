@@ -1,0 +1,18 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 公告详情
+    </navigator>
+  </bar>
+</custom>
+<view class="article-list-li">
+  <view class="article-list-title">文章列表项的标题</view>
+  <view class='iconfont icon-time grays-text'>2019-1-1</view>
+  <view class="article-list-content">
+    <view class='article-list-text'>
+      比如我吧，为了写段话在这里凑字数也是很开心的呀，嘻嘻嘻！求关注！
+      <image src="/images/other/x6.jpg" mode="widthFix"></image>
+      比如我吧，为了写段话在这里凑字数也是很开心的呀，嘻嘻嘻！求关注！ 比如我吧，为了写段话在这里凑字数也是很开心的呀，嘻嘻嘻！求关注！ 比如我吧，为了写段话在这里凑字数也是很开心的呀，嘻嘻嘻！求关注！ 比如我吧，为了写段话在这里凑字数也是很开心的呀，嘻嘻嘻！求关注！ 比如我吧，为了写段话在这里凑字数也是很开心的呀，嘻嘻嘻！求关注！
+    </view>
+  </view>
+</view>

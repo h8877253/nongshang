@@ -1,0 +1,64 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 分类
+    </navigator>
+  </bar>
+</custom>
+<view class="gradual-green bar searchfix" style='top:{{CustomBar}}px'>
+  <view class="userinfo-avatar round mh-sm" bindtap='showModal' data-modal='listSide'>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class='serach-round mr-sm'>
+    <text class="iconfont icon-shop"></text>
+    <input type="text" class="search-input sub" placeholder="请输入关键字，搜索商品" confirm-type="search" />
+  </view>
+  <view class='mh-sm text-sm'>搜索
+    <text class="iconfont icon-search"></text>
+  </view>
+</view>
+
+<view class='flex text-center classifylist topfix' style='top:{{CustomBar}}px;top:{{CustomBar + 50}}px;'>
+  <item class="{{0==TabCur?'success-text':''}}" bindtap='tabSelect' data-id="0">推荐</item>
+  <item class="{{1==TabCur?'success-text':''}}" bindtap='tabSelect' data-id="1">销量</item>
+  <item class="{{2==TabCur?'success-text':''}}" bindtap='tabSelect' data-id="2">最新</item>
+  <item class="{{3==TabCur?'success-text':''}}" bindtap='tabSelect' data-id="3">价格
+    <view class='price-up'>
+      <text class="iconfont icon-triangleupfill"></text>
+      <text class="iconfont icon-triangledownfill"></text>
+    </view>
+  </item>
+  <item class="flex-sub {{4==TabCur?'success-text':''}}" bindtap='showModal' data-modal='menuSide' data-id="4">筛选
+    <text class="iconfont icon-filter"></text>
+  </item>
+</view>
+<view class='column-box'>
+  <view class='column-li' wx:for='{{ShopList}}' wx:key>
+    <image src='{{item.shopImg}}' mode='widthFix'></image>
+    <view class='shoplist-title mt-xs mb-xs'>{{item.shopTitle}}</view>
+    <text class='shenghong mr-sm text-df'>￥{{item.shopRealprice}}</text>
+    <text class='textdeco grays-text text-xs'>{{item.shopBidprice}}</text>
+    <view class='flex justify-between mt-xs gray-text'>
+      <view>销量:
+        <text>{{item.shopSales}}件</text>
+      </view>
+      <view>库存:
+        <text>{{item.shopStock}}件</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='mode-loading' wx:if="{{showLoading}}">
+  <view class='mode-text'>
+    <image src='/images/tabbar/logo.jpg' class='logo'></image>
+  </view>
+</view>
+
+
+<view class='side side-right' wx:if="{{modalName=='menuSide'}}" style='padding-top:{{CustomBar + 100}}px'>
+  <view class='modal-option'>
+    <view class='modal-option-btn' bindtap='closeModal'>取消</view>
+    <view class='modal-option-btn success-text' bindtap='closeModal'>确认</view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 交易物流
+    </navigator>
+  </bar>
+</custom>
+
+<view class="cu-timeline success-text">
+  <view class="cu-item" url='../NoticeDetail/NoticeDetail'>
+    <view class="content gradual-blue">
+      <view class='badge radius capsule-badge'>
+        <text>2019-1-1</text>
+        <text>9:00</text>
+      </view>
+      <view>亲爱滴顾客，您的订单已经签收，再次感谢您对本店的支持，请记得及时给我们好评哦！</view>
+    </view>
+  </view>
+  <view class="cu-item" url='../NoticeDetail/NoticeDetail'>
+    <view class="content gradual-blue">
+      <view class='badge radius capsule-badge '>
+        <text>2019-1-1</text>
+        <text>9:00</text>
+      </view>
+      <view>亲爱滴顾客，您的订单已经签收，再次感谢您对本店的支持，请记得及时给我们好评哦！</view>
+    </view>
+  </view>
+</view>

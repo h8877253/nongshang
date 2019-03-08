@@ -1,0 +1,3 @@
+.article-list-content image {
+  width: 100%;
+}

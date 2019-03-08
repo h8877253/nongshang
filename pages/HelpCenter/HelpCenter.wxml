@@ -1,0 +1,19 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 帮助中心
+    </navigator>
+  </bar>
+</custom>
+
+<view class="bar">
+  <view class='serach-form'>
+    <text class="iconfont icon-search"></text>
+    <input type="text" placeholder="请输入关键字,搜索您遇到的问题" confirm-type="search" bindinput='searchIcon' />
+  </view>
+</view>
+
+<view class="nav-list" wx:for="{{matterlist}}" wx:key wx:if="{{item.isShow}}">
+  <view class="nav-title mb-xs">{{item.title}}</view>
+  <view class="nav-name text-grey">{{item.text}}</view>
+</view>

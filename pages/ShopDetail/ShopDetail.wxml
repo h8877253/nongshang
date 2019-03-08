@@ -1,0 +1,130 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <icon class='iconfont icon-back' style='line-height:{{CustomBar-StatusBar}}px' /> 商品
+    </navigator>
+  </bar>
+</custom>
+<swiper class='swiper-screen square-dot' indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-active-color="#39b54a">
+  <swiper-item>
+    <image src="/images/other/x1.jpg" mode='aspectFill' />
+  </swiper-item>
+</swiper>
+<view class="article-list-li">
+  <view class="article-list-title">章姬奶油草莓</view>
+  <view class='article-list-text'>【无农药】来自大自然保护区，无人工助肥，健康水果</view>
+  <view class='text-df gray-text l-line-height'>￥5.00</view>
+  <view class='badge radius capsule-badge'>
+    <text class='text-lg danhuang shenghong'>促销价</text>
+    <text class='text-xl shenghong'>￥4.00</text>
+  </view>
+  <view class='xiaoliang justify-between'>
+    <view class='.xiaoliang-text'>销量：
+      <text class='danhui'>2229件</text>
+    </view>
+    <view class='.xiaoliang-text'>库存：
+      <text class='danhui'>2229件</text>
+    </view>
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav mb-sm">
+  <view class='flex text-center shopdetailTab'>
+    <item class="flex-sub {{index==TabCur?'gradual-green cur':''}}" wx:for="{{TabCurData}}" wx:key bindtap='tabSelect' data-id="{{item.id}}">
+      {{item.name}}
+    </item>
+
+  </view>
+</scroll-view>
+<view wx:key wx:if="{{0==TabCur}}" class='bg-grey padding margin text-center shopdetails'>
+  <image src="/images/other/x8.jpg" mode='widthFix' />
+</view>
+
+<view class="evaluation" wx:key wx:if="{{1==TabCur}}">
+  <view class="evaluation-item shadow-alice">
+    <view class="bar justify-between">
+      <view class="bar-fr bar">
+        <image src="http://www.diwuyuan.com/bbs/uc_server/data/avatar/000/00/02/52_avatar_big.jpg" class="round"></image>
+        <view>
+          <text class='ml-sm'>小明</text>
+          <text class="gray-text text-sm"> 3 小时前</text>
+          <view class='rating-item ml-sm' wx:for="{{rating}}" wx:for-item="rat">
+            <text wx:for="{{5}}" class="iconfont {{index<rat.scores?'icon-favorfill warning-text':'icon-favor gray-text'}}"></text>
+          </view>
+        </view>
+
+      </view>
+      <!-- <view class='success btn block hollow round dianzanml'>
+        <text class='iconfont icon-community mr-xs'></text>10
+      </view>
+      <view class='danger btn block hollow round'>
+        <text class='iconfont icon-appreciate mr-xs'></text>10
+      </view> -->
+
+    </view>
+    <view class="comment-mian">
+      <view class="lattice-image">
+        <view>
+          <image src='/images/other/x5.jpg' mode='aspectFill'></image>
+        </view>
+        <view>
+          <image src='/images/other/x6.jpg' mode='aspectFill'></image>
+        </view>
+        <view>
+          <image src='/images/other/x7.jpg' mode='aspectFill'></image>
+        </view>
+      </view>
+      <button class="gradual-green-top sm bar-fr eval-btn" bindtap="recomment" data-id="{{comments.comment_id}}">
+        <text class="iconfont icon-writefill">评价：哇，好吃~~！评价：哇，好吃~~！评价：哇，好吃~~！评价：哇，好吃~~！</text>
+      </button>
+    </view>
+  </view>
+  <view class="evaluation-item shadow-alice">
+    <view class="bar justify-between">
+      <view class="bar-fr bar">
+        <image src="http://www.diwuyuan.com/bbs/uc_server/data/avatar/000/00/02/52_avatar_big.jpg" class="round"></image>
+        <view>
+          <text class='ml-sm'>小明</text>
+          <text class="gray-text text-sm"> 3 小时前</text>
+          <view class='rating-item ml-sm' wx:for="{{rating}}" wx:for-item="rat">
+            <text wx:for="{{5}}" class="iconfont {{index<rat.scores?'icon-favorfill warning-text':'icon-favor gray-text'}}"></text>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='success btn block hollow round dianzanml'>
+        <text class='iconfont icon-community mr-xs'></text>10
+      </view>
+      <view class='danger btn block hollow round'>
+        <text class='iconfont icon-appreciate mr-xs'></text>10
+      </view> -->
+
+    </view>
+    <view class="comment-mian">
+      <view class="lattice-image">
+        <view>
+          <image src='/images/other/x2.jpg' mode='aspectFill'></image>
+        </view>
+        <view>
+          <image src='/images/other/x3.jpg' mode='aspectFill'></image>
+        </view>
+        <view>
+          <image src='/images/other/x4.jpg' mode='aspectFill'></image>
+        </view>
+      </view>
+      <button class="gradual-green-top sm bar-fr eval-btn" bindtap="recomment" data-id="{{comments.comment_id}}">
+        <text class="iconfont icon-writefill">评价：哇，好吃~~！评价：哇，好吃~~！评价：哇，好吃~~！评价：哇，好吃~~！</text>
+      </button>
+    </view>
+  </view>
+</view>
+
+<view class="bar bottomfix shadow btns">
+  <view class='flex-sub text-sm'>
+    <view class="text-xs gray-text">
+      <view class='iconfont icon-cart warning-text text-lg'></view>
+      <text class='badge mark-badge'>99</text> 购物车
+    </view>
+  </view>
+  <view class='gradual-red1 flex-twice'>加入购物车</view>
+  <view class='gradual-green flex-twice'>立即订购</view>
+</view>

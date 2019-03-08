@@ -1,0 +1,32 @@
+page {
+  padding-bottom: 110rpx;
+}
+
+.nav-list {
+  padding: 20rpx 25rpx;
+  margin-top: 15rpx;
+}
+
+.nav-list icon {
+  line-height: 50rpx;
+}
+
+.elaborate {
+  width: 50rpx;
+  word-spacing: 19px;
+  line-height: 40px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-box {
+  padding: 20rpx 25rpx;
+  margin: 5rpx 20rpx;
+  margin-top: 15rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list radio {
+  flex: 1;
+  text-align: right;
+}

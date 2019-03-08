@@ -1,0 +1,161 @@
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed none-bg text-white bg-img gradual-green shadow-blur" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='title-bar'>购物车</view>
+  </bar>
+</custom>
+
+<scroll-view scroll-x class="bg-white order-list scroll-view-x">
+  <view class='flex text-center topfix' style='top:{{CustomBar}}px'>
+    <item class="flex-sub {{index==TabCur?'gradual-green-top':''}}" wx:for="{{statusType}}" wx:key bindtap='tabSelect' data-id="{{item.Tabindex}}">
+      {{item.name}}
+      <text class='badge mark-badge ordernum'>1</text>
+    </item>
+  </view>
+</scroll-view>
+<swiper current="{{TabCur}}" class="swiper-box" duration="300" bindchange="bindChange" style='display: flex;height: 100%;'>
+  <swiper-item style=' height: 100%; overflow:scroll; overflow-x:hidden'>
+    <block wx:for="{{statusType[0].obligationlist}}" wx:key>
+      <view class='order-item'>
+        <view class='order-bar justify-between'>
+          <view class='ml-sm'>订单号：{{item.orderNumber}}</view>
+          <view class='success-text mr-sm'>等待付款</view>
+        </view>
+        <view class='goods-main'>
+          <image src='{{item.orderImg}}' mode='aspectFill' class='goods-list-img radius'></image>
+          <view class='goods-text'>
+            <view class=''>四川绵阳无农药菠菜</view>
+          </view>
+          <view class='goods-info'>
+            <view class='danger-text'>¥ {{item.orderRealprice}}</view>
+            <view class='del-price'>¥ {{item.orderBidprice}}</view>
+            <view class='goods-num'>x {{item.orderNum}}</view>
+          </view>
+        </view>
+        <view class='pt-sm pr-sm text-right'>
+          共{{item.orderNum}}件商品 需支付：￥10.00 (含运费)
+        </view>
+        <view class='flex p-sm justify-end'>
+          <view class=''>
+            <navigator class='success btn hollow button-hover' url="../OrderDetail/OrderDetail">
+              <text class='iconfont icon-recharge mr-xs'></text>立即付款
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </swiper-item>
+  <swiper-item>
+    <block wx:for="{{statusType[0].obligationlist}}" wx:key>
+      <view class='order-item'>
+        <view class='order-bar justify-between'>
+          <view class='ml-sm'>订单号：{{item.orderNumber}}</view>
+          <view class='success-text mr-sm'>待发货</view>
+        </view>
+        <view class='goods-main'>
+          <image src='{{item.orderImg}}' mode='aspectFill' class='goods-list-img radius'></image>
+          <view class='goods-text'>
+            <view class=''>四川绵阳无农药菠菜</view>
+          </view>
+          <view class='goods-info'>
+            <view class='danger-text'>¥ {{item.orderRealprice}}</view>
+            <view class='del-price'>¥ {{item.orderBidprice}}</view>
+            <view class='goods-num'>x {{item.orderNum}}</view>
+          </view>
+        </view>
+        <view class='pt-sm pr-sm text-right'>
+          共{{item.orderNum}}件商品 已支付：￥10.00 (含运费)
+        </view>
+        <view class='flex p-sm justify-end'>
+          <view class=''>
+            <navigator class='gray btn hollow mr-sm button-hover' url="../OrderDetail/OrderDetail">
+              <text class='iconfont icon-form mr-xs'></text>查看详情</navigator>
+            <navigator class='warning btn hollow button-hover mr-sm' url='../Replacement/Replacement'>补发申请</navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item>
+    <block wx:for="{{statusType[0].obligationlist}}" wx:key>
+      <view class='order-item'>
+        <view class='order-bar justify-between'>
+          <view class='ml-sm'>订单号：{{item.orderNumber}}</view>
+          <view class='success-text mr-sm'>待收货</view>
+        </view>
+        <view class='goods-main'>
+          <image src='{{item.orderImg}}' mode='aspectFill' class='goods-list-img radius'></image>
+          <view class='goods-text'>
+            <view class=''>四川绵阳无农药菠菜</view>
+          </view>
+          <view class='goods-info'>
+            <view class='danger-text'>¥ {{item.orderRealprice}}</view>
+            <view class='del-price'>¥ {{item.orderBidprice}}</view>
+            <view class='goods-num'>x {{item.orderNum}}</view>
+          </view>
+        </view>
+        <view class='pt-sm pr-sm text-right'>
+          共{{item.orderNum}}件商品 已支付：￥10.00 (含运费)
+        </view>
+        <view class='flex p-sm justify-end'>
+          <view class=''>
+            <navigator class='primary btn hollow mr-sm button-hover'>
+              <text class='iconfont icon-deliver mr-xs'></text>查看物流</navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item>
+    <block wx:for="{{statusType[0].obligationlist}}" wx:key>
+      <view class='order-item'>
+        <view class='order-bar justify-between'>
+          <view class='ml-sm'>订单号：{{item.orderNumber}}</view>
+          <view class='success-text mr-sm'>评价</view>
+        </view>
+        <view class='goods-main'>
+          <image src='{{item.orderImg}}' mode='aspectFill' class='goods-list-img radius'></image>
+          <view class='goods-text'>
+            <view class=''>四川绵阳无农药菠菜</view>
+          </view>
+          <view class='goods-info'>
+            <view class='danger-text'>¥ {{item.orderRealprice}}</view>
+            <view class='del-price'>¥ {{item.orderBidprice}}</view>
+            <view class='goods-num'>x {{item.orderNum}}</view>
+          </view>
+        </view>
+        <view class='pt-sm pr-sm text-right'>
+          共{{item.orderNum}}件商品 已支付：￥10.00 (含运费)
+        </view>
+        <view class='flex p-sm justify-end'>
+          <view class=''>
+            <navigator class='danger btn hollow mr-sm button-hover' url="../Evaluation/Evaluation">
+              <text class='iconfont icon-evaluate mr-xs'></text>评价
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item>
+    <block wx:for="{{statusType[0].obligationlist}}" wx:key>
+      <view class='order-item'>
+        <view class='order-bar justify-between'>
+          <view class='ml-sm'>订单号：{{item.orderNumber}}</view>
+          <view class='success-text mr-sm'>已完成</view>
+        </view>
+        <view class='goods-main bg-white'>
+          <image src='{{item.orderImg}}' mode='aspectFill' class='goods-list-img radius'></image>
+          <view class='goods-text'>
+            <view class=''>四川绵阳无农药菠菜</view>
+          </view>
+          <view class='goods-info'>
+            <view class='danger-text'>¥ {{item.orderRealprice}}</view>
+            <view class='del-price'>¥ {{item.orderBidprice}}</view>
+            <view class='goods-num'>x {{item.orderNum}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+</swiper>

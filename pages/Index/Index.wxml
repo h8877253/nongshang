@@ -1,0 +1,110 @@
+<import src="../../template/mySide/mySide.wxml" />
+<custom style="height:{{CustomBar}}px;" class="DhCard">
+  <bar class="fixed none-bg text-white bg-img shadow-blur gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='title-bar'>首页</view>
+  </bar>
+</custom>
+<view class="gradual-green bar searchfix" style='top:{{CustomBar}}px'>
+  <view class="userinfo-avatar round mh-sm" bindtap='showModal' data-modal='listSide'>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class='serach-round mr-sm'>
+    <text class="iconfont icon-shop success-text text-lg"></text>
+    <input type="text" class="search-input sub" placeholder="请输入关键字，搜索商品" confirm-type="search" />
+  </view>
+  <navigator class='mh-sm text-sm' url='../ShopList/ShopList'>搜索
+    <text class="iconfont icon-search"></text>
+  </navigator>
+</view>
+
+
+<swiper class='swiper-screen square-dot' indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-active-color="#39b54a">
+  <swiper-item wx:for="{{BannerSrc}}" wx:key>
+    <image src="{{item}}" mode='aspectFill' />
+  </swiper-item>
+</swiper>
+<view class="bar p-xs justify-between">
+  <view class='iconfont shenghong'>通知公告
+    <text class="iconfont icon-notification"></text>
+  </view>
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+    <swiper-item wx:for="{{MsgList}}" wx:key="item.index">
+      <view class="swiper_item">{{item.title}}</view>
+    </swiper-item>
+  </swiper>
+  <navigator class='success btn hollow round' url='../Notice/Notice'>更多
+    <view class="iconfont icon-right"></view>
+  </navigator>
+</view>
+<view class='shadow-alice container-cen'>
+  <view class="bar mt-sm p-xs justify-between">
+    <view class='iconfont icon-titles success-text'>最新商品</view>
+    <navigator class='gradual-green btn round' url='../ShopList/ShopList'>更多
+      <view class="iconfont icon-right"></view>
+    </navigator>
+  </view>
+  <view class='scroll-bar'>
+    <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+      <view class='scroll-list'>
+        <view class='scroll-item' wx:for="{{NewShopList}}" wx:key bindtap='ToShopDetail'>
+          <image class='radius' src='{{item.newshopsrc}}'></image>
+          <view class='list-title text-sm'>{{item.title}}</view>
+          <text class='shenghong text-df mr-sm'>￥{{item.newprice}}</text>
+          <text class='grays-text text-sm mr-sm textdeco'>￥{{item.oldprice}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class='shadow-alice container-cen'>
+  <view class="bar mt-sm p-xs justify-between">
+    <view class='iconfont icon-titles success-text'>推荐商品</view>
+    <navigator class='gradual-green btn round' url='../ShopList/ShopList'>更多
+      <view class="iconfont icon-right"></view>
+    </navigator>
+  </view>
+  <view class='scroll-bar'>
+    <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+      <view class='scroll-list'>
+        <view class='scroll-item' wx:for="{{RecomShopList}}" wx:key bindtap='ToShopDetail'>
+          <image class='radius' src='{{item.recomshopsrc}}'></image>
+          <view class='list-title text-sm'>{{item.title}}</view>
+          <text class='shenghong text-df mr-sm'>￥{{item.newprice}}</text>
+          <text class='grays-text text-sm mr-sm textdeco'>￥{{item.oldprice}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='shadow-alice container-cen'>
+  <view class="bar mt-sm p-xs justify-between">
+    <view class='iconfont icon-titles success-text mt-xs'>预定商品</view>
+    <navigator class='gradual-green btn round' url='../ShopList/ShopList'>更多
+      <view class="iconfont icon-right"></view>
+    </navigator>
+  </view>
+</view>
+<view class='card-list-box'>
+  <view class="ins-list-li shadow" wx:for="{{ReserShopList}}" wx:key>
+    <view class="ins-list-img">
+      <image src="{{item.resershopsrc}}"></image>
+    </view>
+    <view class="yuding-title">
+      <view class='yudinglist mb-xs'>{{item.title}}</view>
+      <text class='shenghong text-df mr-sm'>￥{{item.newprice}}</text>
+      <text class='grays-text text-sm textdeco'>￥{{item.oldprice}}</text>
+      <navigator class='gradual-green-top btn mt-xs uporder'>立即下单</navigator>
+    </view>
+  </view>
+</view>
+<view>
+</view>
+
+<view class='mode-loading' wx:if="{{showLoading}}">
+  <view class='mode-text'>
+    <image src='/images/tabbar/logo.jpg' class='logo'></image>
+  </view>
+</view>
+<template is="mySide" data="{{modalName,CustomBar}}"></template>
+
